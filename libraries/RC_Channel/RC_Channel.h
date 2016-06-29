@@ -102,6 +102,7 @@ public:
     uint8_t     percent_input();
     float       norm_output();
     int16_t     angle_to_pwm();
+    int16_t     get_pwm();
     int16_t     pwm_to_range();
     int16_t     pwm_to_range_dz(uint16_t dead_zone);
     int16_t     range_to_pwm();
