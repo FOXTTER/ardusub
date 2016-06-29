@@ -245,10 +245,23 @@ void Sub::fast_loop()
     read_AHRS();
 
     // run low level rate controllers that only require IMU data
-    attitude_control.rate_controller_run();
+    //attitude_control.rate_controller_run();
 
     // send outputs to the motors library
-    motors_output();
+    //motors_output();
+    int16_t motor_out[6];
+    int8_t i;
+    motor_out[0] = channel_forward->read();
+    motor_out[1] = channel_lateral->read();
+    motor_out[2] = channel_yaw->read();
+    motor_out[3] = channel_throttle->read();
+    motor_out[4] = channel_roll->read();
+    motor_out[5] = channel_pitch->read();
+    for (i=0; i<6; i++) {
+        if (true) {
+        	motors.rc_write(i, motor_out[i]);
+        }
+    }
 
     // Inertial Nav
     // --------------------
@@ -258,7 +271,7 @@ void Sub::fast_loop()
     check_ekf_yaw_reset();
 
     // run the attitude controllers
-    update_flight_mode();
+    //update_flight_mode();
 
     // update home from EKF if necessary
     update_home_from_EKF();

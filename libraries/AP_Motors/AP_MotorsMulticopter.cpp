@@ -153,22 +153,22 @@ AP_MotorsMulticopter::AP_MotorsMulticopter(uint16_t loop_rate, uint16_t speed_hz
 void AP_MotorsMulticopter::output()
 {
     // update throttle filter
-    update_throttle_filter();
+    //update_throttle_filter();
 
     // update battery resistance
-    update_battery_resistance();
+    //update_battery_resistance();
 
     // calc filtered battery voltage and lift_max
-    update_lift_max_from_batt_voltage();
+    //update_lift_max_from_batt_voltage();
 
     // run spool logic
-    output_logic();
+    //output_logic();
 
     // calculate thrust
-    output_armed_stabilizing();
+    //output_armed_stabilizing();
 
     // apply any thrust compensation for the frame
-    thrust_compensation();
+    //thrust_compensation();
     
     // convert rpy_thrust values to pwm
     output_to_motors();
