@@ -156,4 +156,5 @@ void Sub::althold_run()
     //radio_in is raw pwm value
     motors.set_forward(channel_forward->norm_input());
     motors.set_lateral(channel_lateral->norm_input());
+    motors.set_yaw(channel_yaw->norm_input());
 }
